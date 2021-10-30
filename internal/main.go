@@ -10,6 +10,7 @@ import (
 	"strings"
 )
 
+// BlockReward - block mining reward
 const BlockReward = 1
 
 func getNodeIdentifier() string {

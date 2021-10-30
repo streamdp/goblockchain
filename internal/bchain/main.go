@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+//InitBlockChain - make new blockchain
 func InitBlockChain() (bChain *BlockChain) {
 	bChain = &BlockChain{}
 	bChain.Complexity = 5
@@ -15,6 +16,7 @@ func InitBlockChain() (bChain *BlockChain) {
 	return bChain
 }
 
+//PingNode - check if the node is alive
 func PingNode(url string) bool {
 	var body []byte
 	var err error
@@ -35,6 +37,7 @@ func PingNode(url string) bool {
 	return false
 }
 
+//GetBodyResponse - get response body by url line
 func GetBodyResponse(url string) ([]byte, error) {
 	var body []byte
 	var err error
@@ -58,6 +61,7 @@ func GetBodyResponse(url string) ([]byte, error) {
 	return body, nil
 }
 
+//GetChain - get blockchain by url line from another node
 func GetChain(url string) ([]*Block, error) {
 	var body []byte
 	var err error
