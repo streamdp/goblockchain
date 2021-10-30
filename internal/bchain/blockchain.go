@@ -14,9 +14,9 @@ import (
 type BlockChain struct {
 	Chain              []*Block       `json:"chain"`
 	CurrentTransaction []*Transaction `json:"current_transaction"`
-	Nodes 			   []*url.URL    `json:"nodes"`
-	Complexity		   int			  `json:"complexity"`
-	TimeStamp		   int64		  `json:"time_stamp"`
+	Nodes              []*url.URL     `json:"nodes"`
+	Complexity         int            `json:"complexity"`
+	TimeStamp          int64          `json:"time_stamp"`
 }
 
 type Block struct {
@@ -46,7 +46,7 @@ func (b *BlockChain) IncreaseComplexity() {
 
 func (b *BlockChain) DecreaseComplexity() {
 	if b.Complexity > 4 {
-		b.Complexity --
+		b.Complexity--
 		b.UpdateTimeStamp()
 	}
 }
@@ -145,12 +145,12 @@ func (b *BlockChain) IsValidChain(chain []*Block) bool {
 	return true
 }
 
-func (b *BlockChain) ResolveConflicts() bool  {
+func (b *BlockChain) ResolveConflicts() bool {
 	var chain []*Block
 	var err error
 	var actualChain []*Block
 	maxLength := len(b.Chain)
-	for _, node := range b.Nodes{
+	for _, node := range b.Nodes {
 		if chain, err = GetChain(node.String()); err != nil {
 			log.Println("error with getting chain from node", err)
 		}

@@ -1,4 +1,4 @@
-module goblockchain
+module github.com/streamdp/goblockchain
 
 go 1.17
 

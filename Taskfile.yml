@@ -3,8 +3,8 @@
     build:
       desc: Build the app
       cmds:
-        - GOFLAGS=-mod=mod go build -o bin/goBlockChain internal/main.go
+        - GOFLAGS=-mod=mod go build -o bin/goBlockChain  github.com/streamdp/goblockchain/internal
     run:
       desc: Run the app
       cmds:
-        - GOFLAGS=-mod=mod go run internal/main.go
+        - GOFLAGS=-mod=mod go run  github.com/streamdp/goblockchain/internal

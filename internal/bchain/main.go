@@ -19,7 +19,7 @@ func PingNode(url string) bool {
 	var body []byte
 	var err error
 	type jsonPing struct {
-		Message string 	`json:"message"`
+		Message string `json:"message"`
 	}
 	if body, err = GetBodyResponse(url + "ping"); err != nil {
 		log.Println(err)
@@ -43,8 +43,8 @@ func GetBodyResponse(url string) ([]byte, error) {
 	if req, err = http.NewRequest("GET", url, nil); err != nil {
 		return nil, err
 	}
-	req.Header.Set("Content-Type","application/json")
-	if resp, err = http.DefaultClient.Do(req);	err != nil {
+	req.Header.Set("Content-Type", "application/json")
+	if resp, err = http.DefaultClient.Do(req); err != nil {
 		return nil, err
 	}
 	defer func(Body io.ReadCloser) {
@@ -52,7 +52,7 @@ func GetBodyResponse(url string) ([]byte, error) {
 			log.Println(err)
 		}
 	}(resp.Body)
-	if body, err = ioutil.ReadAll(resp.Body);	err != nil {
+	if body, err = ioutil.ReadAll(resp.Body); err != nil {
 		return nil, err
 	}
 	return body, nil
@@ -62,8 +62,8 @@ func GetChain(url string) ([]*Block, error) {
 	var body []byte
 	var err error
 	type jsonChain struct {
-		Chain 	[]*Block `json:"chain"`
-		Length 	int64   `json:"-"`
+		Chain  []*Block `json:"chain"`
+		Length int64    `json:"-"`
 	}
 	if body, err = GetBodyResponse(url + "chain"); err != nil {
 		return nil, err
