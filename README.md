@@ -1,5 +1,14 @@
 # goblockchain
 
+<p align="center">
+    <a href="https://github.com/streamdp/goblockchain/releases/latest">
+        <img alt="GitHub release" src="https://img.shields.io/github/v/release/streamdp/goblockchain.svg?logo=github&style=flat-square">
+    </a>
+    <a href="https://goreportcard.com/report/github.com/streamdp/goblockchain">
+        <img src="https://goreportcard.com/badge/github.com/streamdp/goblockchain" alt="Code Status" />
+    </a>
+</p>
+
 This repo contains a simple/basic blockchain realisation in Go, with a basic code organization.
 We use:
 * gin-gonic/gin package to start and serve HTTP server
