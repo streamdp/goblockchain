@@ -1,0 +1,10 @@
+  version:  "3"
+  tasks:
+    build:
+      desc: Build the app
+      cmds:
+        - GOFLAGS=-mod=mod go build -o bin/goBlockChain internal/main.go
+    run:
+      desc: Run the app
+      cmds:
+        - GOFLAGS=-mod=mod go run internal/main.go
